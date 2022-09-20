@@ -4,6 +4,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "deploy": "vite build --mode production && cross-env NODE_ENV=production node ./deploy",
     "preview": "vite preview --port 4173",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore"
   },
@@ -17,10 +18,12 @@
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^3.0.3",
+    "cross-env": "^7.0.3",
     "eslint": "^8.22.0",
     "eslint-plugin-vue": "^9.3.0",
     "sass": "^1.32.7",
     "sass-loader": "^12.0.0",
+    "scp2": "^0.5.0",
     "unplugin-auto-import": "^0.11.2",
     "unplugin-vue-components": "^0.22.7",
     "vite": "^3.0.9"

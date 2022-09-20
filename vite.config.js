@@ -18,9 +18,20 @@ export default defineConfig({
       resolvers: [ElementPlusResolver()],
     }),
   ],
+  base: './',
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
     }
+  },
+  build: {
+    target: 'modules',
+    polyfillModulePreload: true,
+    outDir: 'tool',
+    assetsDir: 'assets',
+    assetsInlineLimit: 'assets',
+    cssCodeSplit: true,
+    sourcemap: false,
+    chunkSizeWarningLimit: 500
   }
 })
